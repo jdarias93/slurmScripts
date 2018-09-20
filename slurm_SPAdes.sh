@@ -10,6 +10,7 @@
 #SBATCH --job-name="CraVe_spade"
 #SBATCH -p batch
 
+# Updated: 09/20/18
 # You MUST have fastq files.
 
 module load SPAdes
