@@ -13,7 +13,7 @@
 # You MUST have fastq files.
 
 module load SPAdes
-srun spades.py --careful -1 CraVe1.fastq.gz -2 CraVe2.fastq.gz -o spades_output
+srun spades.py -k 21,33,55,77,99,127 -1 CraVe1.fastq.gz -2 CraVe2.fastq.gz -o spades_output
 
 hostname
 date
