@@ -2,7 +2,7 @@
 
 #SBATCH --nodes=1    
 #SBATCH --ntasks=16
-#SBATCH --mem-per-cpu=32GB
+#SBATCH --mem-per-cpu=16GB
 #SBATCH --time=10-00:00:00
 #SBATCH --output=<SPECIES>_AUGUSTUS_slurmout
 #SBATCH --mail-user=josh.d.arias@gmail.com
