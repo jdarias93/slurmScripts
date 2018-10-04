@@ -17,8 +17,9 @@
 # http://augustus.gobics.de/binaries/README.TXT
 
 module load augustus
-srun augustus --genemodel=partial --maxDNAPieceSize=840000 --protein=on --species=arabidopsis <queryfilename.fasta>
-srun augustus --genemodel=partial --maxDNAPieceSize=840000 --protein=on --species=tomato <queryfilename.fasta>
-
+srun augustus --genemodel=partial --maxDNAPieceSize=840000 --protein=on --outfile=<SPECIES>_AT_AUGUSTUS.gff --species=arabidopsis <queryfilename.fasta>
+srun getAnnoFasta.pl <SPECIES>_AT_AUGUSTUS.gff # Makes FASTA protein file from .gff file
+srun augustus --genemodel=partial --maxDNAPieceSize=840000 --protein=on --outfile=<SPECIES>_SL_AUGUSTUS.gff --species=tomato <queryfilename.fasta>
+srun getAnnoFasta.pl <SPECIES>_SL_AUGUSTUS.gff
 hostname
 date
