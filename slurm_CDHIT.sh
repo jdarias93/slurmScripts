@@ -1,6 +1,6 @@
 #!/bin/bash -l
 
-#SBATCH --nodes=1    
+#SBATCH --nodes=1
 #SBATCH --ntasks=16
 #SBATCH --mem-per-cpu=16GB
 #SBATCH --time=10-00:00:00
@@ -11,5 +11,8 @@
 #SBATCH -p batch
 
 module load cd-hit
-cd-hit -i <input file> -o <output file name> -T -16
-
+cd-hit -i <SPECIESPATH> -o <SPECIES>_CDHIT90 -T 16
+cd-hit -i <SPECIESPATH> -c 1.00 -o <SPECIES>_CDHIT100 -T 16
+cd-hit-2d -i <SPECIESPATH> -i2 <2ndSPECIESPATH> -o <SPECIES>_CDHIT2D90 -T 16
+cd-hit-2d -i <SPECIESPATH> -i2 <2ndSPECIESPATH> -c 1.00 -o <SPECIES>_CDHIT2D100 -T 16
+date
