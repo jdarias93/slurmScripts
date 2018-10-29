@@ -1,0 +1,8 @@
+# NOT a slurm script (Obviously)
+# Unix workflow used to clean metadata in fasta protein files prior to OrthoFinder.
+
+sed 's/ //g' $1 > $1.pep			
+# A lot of metadata had spaces in it which screws up bioawk delimitation.
+
+bioawk -cfastax '{print ">AcLeu_"NR"\n"$seq}' AcLeuCD90.fasta.pep > AcLeuCD90.fasta
+# Cleaned
