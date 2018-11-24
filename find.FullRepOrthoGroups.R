@@ -40,4 +40,11 @@ find.FullRepOrthoGroups <- function(OrthoGroups) {
         }
         write.csv(x=OG[as.logical(z)], file="FullRepOG.csv") 
         # Write list of full rep OGs
+        c <- read.csv("FullRepOG.csv")
+        c <- c[,1]
+        dir.create(paste(getwd(),"/IncompleteOGs",sep=""))
+        for (i in 1:length(c$x)) {
+                fromdir <- paste(getwd(),"/Gene_Trees/",c[i],sep="")
+                todir <- paste(getwd(),"/IncompleteOGs/",c[i],sep="")
+        }
 }
