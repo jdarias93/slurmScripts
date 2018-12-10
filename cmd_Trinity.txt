@@ -1,0 +1,6 @@
+# Command Line for Trinity v.2.4.0
+# All analyses run on the dedicated IU-Galaxy Trinity server
+# For more information, visit: https://galaxy.ncgas-trinity.indiana.edu
+# Last Updated by Joshua Arias on 12/08/18
+
+Trinity -max_memory 240G -CPU 8 --seqType Paired -left <INPUT_PE1.FASTA> -right <INPUT_PE2.FASTA>

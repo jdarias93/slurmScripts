@@ -1,0 +1,7 @@
+# Command Line for PRINSEQ v.0.20.4
+# All analyses run either locally on Mac Pro or on CyVerse
+# Last updated by Joshua Arias on 12/08/18
+# For more information on PRINSEQ, visit: http://prinseq.sourceforge.net/
+
+perl prinseq-lite.pl <INPUT_FASTQ> -out_format 5 -out_good <OUTPUT_PREFIX> \
+-min_len 40 -noniupac -min_qual_mean 15 -lc_method entropy -lc_threshold 60 -trim_ns_right 10 -ns_max_p 20

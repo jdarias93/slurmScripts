@@ -1,0 +1,7 @@
+# Command Line for Scythe v.0.994 BETA
+# All analyses run either locally on Mac Pro or on CyVerse
+# Last updated by Joshua Arias on 12/08/18
+# For more information on Scythe, visit: https://github.com/vsbuffalo/scythe
+
+
+scythe <INPUT.FASTQ> -a TruSeqAdapters.fa -o <OUTPUT.FASTQ> -q sanger -m matches -n 0 -p 0.05
