@@ -16,7 +16,7 @@
 # http://avrilomics.blogspot.com/2013/04/training-augustus-gene-finding-software.html
 # http://augustus.gobics.de/binaries/README.TXT
 
-module load augustus
+module load augustus/3.1
 srun augustus --genemodel=partial --maxDNAPieceSize=840000 --protein=on --outfile=<SPECIES>_AT_AUGUSTUS.gff --species=arabidopsis <queryfilename.fasta>
 srun getAnnoFasta.pl <SPECIES>_AT_AUGUSTUS.gff # Makes FASTA protein file from .gff file
 srun augustus --genemodel=partial --maxDNAPieceSize=840000 --protein=on --outfile=<SPECIES>_SL_AUGUSTUS.gff --species=tomato <queryfilename.fasta>
