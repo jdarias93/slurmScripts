@@ -20,6 +20,3 @@ srun spades.py -k 21,33,55,77,99,127 -1 <FILE 1>.fastq.gz -2 <FILE 2>.fastq.gz -
 
 # This is only for Paired End reads. If you don't have Paired End reads, go here and make the approriate changes to this:
 # http://cab.spbu.ru/files/release3.12.0/manual.html
-
-hostname
-date

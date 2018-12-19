@@ -21,7 +21,8 @@ export PATH="/path/to/BUSCO/augustus3.3/bin:$PATH" # Sets new path variables for
 export PATH="/path/to/bigdata/BUSCO/augustus3.3/scripts:$PATH"
 export AUGUSTUS_CONFIG_PATH="/path/to/bigdata/BUSCO/augustus3.3/config/"
 
+# This line for GENOME SKIMS ONLY:
 srun run_BUSCO.py -i <SPECIES_PATH> -o <OUTPUT_NAME> -l /path/to/BUSCOdb -m geno -c 16
 
-hostname
-date
+# This line for TRANSCRIPTOMES ONLY:
+srun run_BUSCO.py -i <SPECIES_PATH> -o <OUTPUT_NAME> -l /path/to/BUSCOdb -m prot -c 16

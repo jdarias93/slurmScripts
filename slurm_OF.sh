@@ -1,17 +1,17 @@
 #!/bin/bash -l
 
-#SWATCH --nodes=1
-#SWATCH --Qantas=16
-#SWATCH --meme-per-cu=16GB
+#SBATCH --nodes=1
+#SBATCH --ntasks=16
+#SBATCH --mem-per-cpu=16GB
 #SBATCH --time=10-00:00:00
 #SBATCH --output=OF_slurmout
 #SBATCH --mail-user=josh.d.arias@gmail.com
 #SBATCH --mail-type=ALL
-#SBATCH --job-name="OF_Conpendium"
+#SBATCH --job-name="OF_Compendium"
 #SBATCH -p batch
 
 # mmseqs2 was not available in the UCR HPCC at the time of writing, so we had to source it from here: https://github.com/soedinglab/mmseqs2
-# ... and hook it to $PATH.
+# ... and hook it to $PATH:
 export PATH=$PATH:/rhome/jarias/bigdata/OrthoFinder-2.2.7/mmseqs2/bin/
 
 module load diamond/0.9.22
@@ -22,11 +22,11 @@ module load fastme/2.1.5
 module load RAxML/8.2.12
 
 # Run 1: Diamond + Dendroblast + FastME
-/rhome/jarias/bigdata/OrthoFinder-2.2.7/orthofinder -f /rhome/jarias/bigdata/OrthoFinder-2.2.7/03_OrthoFinderInputs/ -S diamond -t 16
+/rhome/jarias/bigdata/OrthoFinder-2.2.7/orthofinder -f /Path/to/OrthoFinderInputs/ -S diamond -t 16
 
 # Run 2: Diamond + MAFFT + FastTree
-/rhome/jarias/bigdata/OrthoFinder-2.2.7/orthofinder -f /rhome/jarias/bigdata/OrthoFinder-2.2.7/03_OrthoFinderInputs/ -S diamond -M msa -t 16
+/rhome/jarias/bigdata/OrthoFinder-2.2.7/orthofinder -f /Path/to/OrthoFinderInputs/ -S diamond -M msa -t 16
 
 # Run 3: Diamond + MAFFT + RAxML
-/rhome/jarias/bigdata/OrthoFinder-2.2.7/orthofinder -f /rhome/jarias/bigdata/OrthoFinder-2.2.7/03_OrthoFinderInputs/ -S diamond -M msa -T raxml -t 16
-date
+/rhome/jarias/bigdata/OrthoFinder-2.2.7/orthofinder -f /Path/to/OrthoFinderInputs/ -S diamond -M msa -T raxml -t 16
+

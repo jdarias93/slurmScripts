@@ -21,5 +21,3 @@ srun augustus --genemodel=partial --maxDNAPieceSize=840000 --protein=on --outfil
 srun getAnnoFasta.pl <SPECIES>_AT_AUGUSTUS.gff # Makes FASTA protein file from .gff file
 srun augustus --genemodel=partial --maxDNAPieceSize=840000 --protein=on --outfile=<SPECIES>_SL_AUGUSTUS.gff --species=tomato <queryfilename.fasta>
 srun getAnnoFasta.pl <SPECIES>_SL_AUGUSTUS.gff
-hostname
-date
