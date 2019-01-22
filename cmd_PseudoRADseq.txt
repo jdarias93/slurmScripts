@@ -4,14 +4,8 @@
 
 # Find lines that start with CAATTC. 
 # GREP prints the 2 lines before and 1 line after
-# Use zgrep so that we don’t have to uncompress everything first.
-zgrep -a -A 2 -B 1 "^CAATTC" BleSp_P1.fastq.gz #1
+# Use zgrep so that we do not have to uncompress everything first.
 
-# Delete the pesky dashes that grep leaves behind to delimit every hit
-sed -E 's/--//g' RAD_BleSp_P1.fastq #2
+zgrep -a --no-group-separator -A 2 -B 1 "^CAATTC" BarRo_P1.fastq.gz > RobertRAD/RAD_BarRo_P1.fq
 
-# Delete empty lines (There probably is a way to combine steps 1 and 2.
-sed -E '/^$/d' > RAD_BleSp_P1.fq #3
-
-# Piped here for convenience
-zgrep -a -A 2 -B 1 "^CAATTC" BleDi_P1.fastq.gz | sed -E 's/--//g' | sed -E '/^$/d' > RobertRAD/RAD_BleDi_P1.fq
+# Can also be done with grep alone.
