@@ -1,0 +1,3 @@
+perl/5.20.2(22):ERROR:150: Module 'perl/5.20.2' conflicts with the currently loaded module(s) 'perl/5.24.0'
+perl/5.20.2(22):ERROR:102: Tcl command execution failed: conflict        perl
+
