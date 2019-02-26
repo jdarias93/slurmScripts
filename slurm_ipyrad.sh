@@ -2,19 +2,19 @@
 
 #SBATCH --nodes 1
 #SBATCH --ntasks=16
-#SBATCH --time 20-00:00:00
-#SBATCH --mem=200G
+#SBATCH --time 1-00:00:00
+#SBATCH --mem=256G
 #SBATCH --job-name="ipyradfull"
 #SBATCH --output=ipyrad_outputfull.txt
-#SBATCH --mail-user=robpcom3@gmail.com
+#SBATCH --mail-user=josh.d.arias@gmail.com
 #SBATCH --mail-type=ALL
-#SBATCH -p highmem
+#SBATCH -p batch
 
 ## Activate ipyrad
 source activate myipyrad
 
 ## Change into the directory where your parameter file resides
-cd $HOME/bigdata/FullBarFastq
+cd /bigdata/GenBankRawData/PsuedoRAD/
 
 ## Call ipyrad on your params file
-ipyrad -p fullparamx.txt -s 1234567
+ipyrad -p iPyrad_Params.txt -s 1234567
