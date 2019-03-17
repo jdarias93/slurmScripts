@@ -27,6 +27,6 @@ module load RAxML/8.2.12
 # Run 2: Diamond + MAFFT + FastTree
 /rhome/jarias/bigdata/OrthoFinder-2.2.7/orthofinder -f /Path/to/OrthoFinderInputs/ -S diamond -M msa -t 16
 
-# Run 3: Diamond + MAFFT + RAxML
-/rhome/jarias/bigdata/OrthoFinder-2.2.7/orthofinder -f /Path/to/OrthoFinderInputs/ -S diamond -M msa -T raxml -t 16
+# Run 3: Diamond + MAFFT + RAxML (DID NOT WORK)
+#/rhome/jarias/bigdata/OrthoFinder-2.2.7/orthofinder -f /Path/to/OrthoFinderInputs/ -S diamond -M msa -T raxml -t 16
 
